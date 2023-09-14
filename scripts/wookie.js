@@ -19,24 +19,24 @@ document.addEventListener('DOMContentLoaded', function () {
             })
     };
 
-    const filmsUrl = 'https://swapi.dev/api/films/';
-
-    get(filmsUrl).then(function (response) {
-        console.log("FILM LIST:", response.results);
-        generateFilmList(response.results.map(x => {
+    //trying out the wookie translation :)
+    const wookieTranslation = 'https://swapi.dev/api/films/?format=wookiee';
+    get(wookieTranslation).then(function (response) {
+        console.log("WOOKIE FILM LIST:", response.rcwochuanaoc);
+        generateFilmList(response.rcwochuanaoc.map(x => {
             //I think x stands for results
-            console.log(x.title);
-            return x.title;
+            console.log(x.aoahaoanwo);
+            return x.aoahaoanwo;
         }));
     });
 
 });
 
-//this displays the drop-down menu with the titles displayed.
 
-const categoryListForm = document.getElementById('categoryListForm');
+//Wookie drop-down menu :)
+const wookieFilmTitle = document.getElementById('wookieFilmTitles');
 
-function generateFilmList(categoryArray) {
+function generateFilmListInWookie(categoryArray) {
     console.log(categoryArray);
     const selectElement = document.createElement('select');
     categoryArray.map(function (category) {
@@ -49,5 +49,5 @@ function generateFilmList(categoryArray) {
         selectElement.appendChild(option);
     })
     //append the <select> to <form>
-    categoryListForm.append(selectElement);
+    wookieFilmTitle.append(selectElement);
 };

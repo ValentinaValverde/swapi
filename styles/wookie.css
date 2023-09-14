@@ -1,14 +1,16 @@
 body{
     font-family: 'Reem Kufi Fun', sans-serif;
-    text-align: center;
     font-size: 16px;
     background-color: black;
     color: white;
+    text-align: center;
+
 }
 
 .title{
     font-size: 3rem;
 }
+
 
 .translate{
     display: grid;
