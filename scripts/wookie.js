@@ -6,12 +6,9 @@ document.addEventListener('DOMContentLoaded', function () {
     function get(url) {
         return fetch(url)
             .then(function (response) {
-                console.log("RESPONSE:", response);
-                return response.json();
+                return response.text();
             })
             .then(function (data) {
-                console.log("DATA:", data);
-                // showFilm(data, filmHere);
                 return data;
             })
             .catch(function (err) {
@@ -21,15 +18,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
     //trying out the wookie translation :)
     const wookieTranslation = 'https://swapi.dev/api/films/?format=wookiee';
+
     get(wookieTranslation).then(function (response) {
-        console.log("WOOKIE FILM LIST:", response.rcwochuanaoc);
-        generateFilmList(response.rcwochuanaoc.map(x => {
+        console.log("FILM LIST:", JSON.parse(response));
+        generateFilmListInWookie(response.rcwochuanaoc.map(x => {
             //I think x stands for results
             console.log(x.aoahaoanwo);
             return x.aoahaoanwo;
         }));
     });
-
 });
 
 

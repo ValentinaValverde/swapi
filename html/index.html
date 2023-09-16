@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SWAPI</title>
-    <link rel="stylesheet" href="../styles/styles.css"/>
-    <link rel="stylesheet" href="../styles/normalize.css"/>
+    <link rel="stylesheet" href="../styles/styles.css" />
+    <link rel="stylesheet" href="../styles/normalize.css" />
 
 </head>
+
 <body>
     <!-- these are the google fonts that I imported: -->
     <style>
@@ -16,19 +18,26 @@
 
     <a class="translate" href="../html/wookie.html">Wookie Translation</a>
 
-
     <h1 class="title">Star Wars Films</h1>
-    
-    <p>Film list will appear shortly:</p>
-    <form id="categoryListForm">
 
-    </form>
+    <div>
+        <p>Film list will appear shortly:</p>
+        <form id="categoryListForm"></form>
+        <button type="submit" id="submit">Generate info!</button>
+        <p>Info will be displayed below:</p>
+    </div>
 
-<form id="wookieFilmTitles">
-
-</form>
+    <div class="filmInfo">
+        <p id="title"></p>
+        <p id="episode"></p>
+        <p id="director"></p>
+        <p id="producer"></p>
+        <p id="releaseDate"></p>
+        <p id="openingCrawl"></p>
+    </div>
 
 
     <script src="../scripts/scripts.js"></script>
 </body>
+
 </html>
