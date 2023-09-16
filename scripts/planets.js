@@ -20,13 +20,13 @@ function get(url) {
 document.addEventListener('DOMContentLoaded', function () {
     console.log("DOM Content Loaded");
 
-    const filmsUrl = 'https://swapi.dev/api/films/';
+    const planetsUrl = 'https://swapi.dev/api/planets/';
 
-    get(filmsUrl).then(function (response) {
-        generateFilmList(response.results.map(x => {
+    get(planetsUrl).then(function (response) {
+        generatePlanetList(response.results.map(x => {
             //I think x stands for results
-            console.log(x.title);
-            return x.title;
+            console.log(x.name);
+            return x.name;
         }));
     });
 });
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 const categoryListForm = document.getElementById('categoryListForm');
 
-function generateFilmList(categoryArray) {
+function generatePlanetList(categoryArray) {
     console.log(categoryArray);
     const selectElement = document.createElement('select');
     categoryArray.map(function (category) {
@@ -54,21 +54,21 @@ function generateFilmList(categoryArray) {
 
 //BELOW IS MY WORK FOR GENERATING INFO :))
 
-const title = document.getElementById('title');
-const episode = document.getElementById('episode');
-const director = document.getElementById('director');
-const producer = document.getElementById('producer');
-const releaseDate = document.getElementById('releaseDate');
-const openingCrawl = document.getElementById('openingCrawl');
+const planetName = document.getElementById('name');
+const climate = document.getElementById('climate');
+const gravity = document.getElementById('gravity');
+const population = document.getElementById('population');
+const terrain = document.getElementById('terrain');
+const diameter = document.getElementById('diameter');
 
 
-function generateFilmInfo(response){
-    title.innerHTML = "Title: " + response.title;
-    episode.innerHTML = "Episode: " + response.episode_id;
-    director.innerHTML = "Director: " + response.director;
-    producer.innerHTML = "Producer: " + response.producer;
-    releaseDate.innerHTML = "Release Date: " + response.release_date;
-    openingCrawl.innerHTML = "Opening Crawl: " + response.opening_crawl;
+function generatePlanetInfo(response){
+    planetName.innerHTML = "Title: " + response.name;
+    climate.innerHTML = "Episode: " + response.climate;
+    gravity.innerHTML = "Director: " + response.gravity;
+    population.innerHTML = "Producer: " + response.population;
+    terrain.innerHTML = "Release Date: " + response.terrain;
+    diameter.innerHTML = "Opening Crawl: " + response.diameter;
 };
 
 //START OF BUTTON EVENT:
@@ -78,12 +78,12 @@ submit.addEventListener('click', function (event) {
     console.log(selectedItem);
 
     if (selectedItem){
-        const filmOne = 'https://swapi.dev/api/films/';
-        get(filmOne).then(function (response) {
+        const planetUrl = 'https://swapi.dev/api/planets/';
+        get(planetUrl).then(function (response) {
             console.log(response.results);
-            const movie = response.results.filter((x) => x.title === selectedItem)[0];
+            const planet = response.results.filter((x) => x.name === selectedItem)[0];
             
-            generateFilmInfo(movie);
+            generatePlanetInfo(planet);
         })
     
     };
