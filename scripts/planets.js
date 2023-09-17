@@ -63,12 +63,12 @@ const diameter = document.getElementById('diameter');
 
 
 function generatePlanetInfo(response){
-    planetName.innerHTML = "Title: " + response.name;
-    climate.innerHTML = "Episode: " + response.climate;
-    gravity.innerHTML = "Director: " + response.gravity;
-    population.innerHTML = "Producer: " + response.population;
-    terrain.innerHTML = "Release Date: " + response.terrain;
-    diameter.innerHTML = "Opening Crawl: " + response.diameter;
+    planetName.innerHTML = "Name: " + response.name;
+    climate.innerHTML = "Climate: " + response.climate;
+    gravity.innerHTML = "Gravity: " + response.gravity;
+    population.innerHTML = "Population: " + response.population;
+    terrain.innerHTML = "Terrain: " + response.terrain;
+    diameter.innerHTML = "Diameter: " + response.diameter;
 };
 
 //START OF BUTTON EVENT:

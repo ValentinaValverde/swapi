@@ -10,7 +10,7 @@ body{
     font-size: 3rem;
 }
 
-.translate{
+.nav{
     display: grid;
     justify-content: flex-end;
     text-align: right;
